@@ -1,0 +1,25 @@
+/etc/hosts nie obs³uguje tzw. dzikiej karty. 
+By niepowielac kazdej subdomeny w kolejnej linijce (ip - host) mozna uzyc narzedzia jak dnsmasq.
+Zeby to wlaczyc wystarczy edytowac plik dns.masq.conf i dodac linijke:
+address=/example.com/127.0.0.1
+
+#http://stackoverflow.com/questions/20446930/how-to-put-wildcard-entry-into-etc-hosts
+
+Firefox blokuje dostep do witryn podpisanych self-signed cert.
+Aby to wylaczyc, otworz strone: about:config
+i wyszukaj(ctrl+f): security.tls.insecure_fallback_hosts
+wpisac tam nazwe hosta
+
+#https://support.mozilla.org/pl/questions/1055526
+
+Czeste bledy przy SET jak zipimported() value must be string, mozna rozwiazac, usuwajac biezaca wersje SET'a
+potem git clone https://github.com/trustedsec/social-engineer-toolkit/ set/
+cd set/
+./setup.py install (chyba tak? jak zle to wywietli sie podpowiedz)
+ 
+#https://www.trustedsec.com/social-engineer-toolkit/
+
+###########
+PS. Blad na zajeciach w SET (check internet conn) spowodowany byl przekierowaniem hosta www.facebook.com
+na moj adress wewnetrzny w pliku etc/hosts, co uniemozliwilo polaczenie sie z witryna facebook'a w celu skopiowania strony.
+Tj. pozostalosc po poprzednich modyfikacjach. SOLVED :)
